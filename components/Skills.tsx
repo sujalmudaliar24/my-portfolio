@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import GithubCalendar from "@/components/GithubCalendar";
 
 const MARQUEE_ITEMS_ROW1 = [
   "React Native",
@@ -144,6 +145,10 @@ export default function Skills() {
               )}
             </div>
           </div>
+        </div>
+        {/* GitHub contributions */}
+        <div className="mt-8">
+          <GithubCalendar username="sujalmudaliar24" />
         </div>
       </div>
     </section>
