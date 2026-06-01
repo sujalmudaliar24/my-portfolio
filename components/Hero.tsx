@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
+import profileImage from "@/src/profileimg.jpeg";
 import { gsap } from "@/lib/gsap";
 
 export default function Hero() {
@@ -10,6 +12,7 @@ export default function Hero() {
   const descRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const decorRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -60,6 +63,16 @@ export default function Hero() {
             ease: "power2.out",
           },
           "-=1"
+        )
+        .from(
+          imageRef.current,
+          {
+            x: 60,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "-=1.2"
         );
     }, sectionRef);
 
@@ -83,7 +96,7 @@ export default function Hero() {
       {/* Decorative elements */}
       <div ref={decorRef} className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute -top-20 -right-20 w-96 h-96 rounded-full opacity-[0.04]"
+          className="absolute -top-20 -right-20 w-[600px] h-[600px] rounded-full opacity-[0.04]"
           style={{ background: "var(--color-navy)" }}
         />
         <div
@@ -101,75 +114,115 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-32 md:py-40 relative z-10">
-        <div className="max-w-3xl">
-          {/* Label */}
-          <div className="section-label mb-6">Sujal Mudaliar — Mumbai</div>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 xl:px-16 py-32 md:py-40 relative z-10 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 xl:gap-24">
 
-          {/* Name */}
-          <h1
-            ref={nameRef}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6"
-            style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
-          >
-            Sujal
-            <br />
-            <span className="text-[var(--color-slate)]">Mudaliar</span>
-          </h1>
+          {/* Left — Text Content */}
+          <div className="flex-1 max-w-2xl">
+            {/* Label */}
+            <div className="section-label mb-6">Sujal Mudaliar — Mumbai</div>
 
-          {/* Role */}
-          <p
-            ref={roleRef}
-            className="text-lg md:text-xl font-medium mb-6 flex items-center flex-wrap gap-2"
-            style={{ color: "var(--color-navy)" }}
-          >
-            React Native Developer
-            <span
-              className="w-1.5 h-1.5 rounded-full inline-block"
-              style={{ background: "var(--color-slate-light)" }}
-            />
-            Cybersecurity Enthusiast
-          </p>
-
-          {/* Description */}
-          <p
-            ref={descRef}
-            className="text-base md:text-lg leading-relaxed max-w-xl mb-10"
-            style={{ color: "var(--color-slate)" }}
-          >
-            Building cross-platform mobile applications with React Native and
-            the MERN stack. BSc IT graduate from Mumbai with a passion for
-            creating seamless digital experiences and an aspiring interest in
-            cybersecurity.
-          </p>
-
-          {/* CTA Buttons */}
-          <div ref={ctaRef} className="flex flex-wrap gap-4">
-            <button
-              onClick={() => scrollTo("#projects")}
-              className="btn-primary"
+            {/* Name */}
+            <h1
+              ref={nameRef}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight mb-6"
+              style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
             >
-              View Projects
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+              Sujal
+              <br />
+              <span className="text-[var(--color-slate)]">Mudaliar</span>
+            </h1>
+
+            {/* Role */}
+            <p
+              ref={roleRef}
+              className="text-lg md:text-xl font-medium mb-6 flex items-center flex-wrap gap-2"
+              style={{ color: "var(--color-navy)" }}
+            >
+              React Native Developer
+              <span
+                className="w-1.5 h-1.5 rounded-full inline-block"
+                style={{ background: "var(--color-slate-light)" }}
+              />
+              Cybersecurity Enthusiast
+            </p>
+
+            {/* Description */}
+            <p
+              ref={descRef}
+              className="text-base md:text-lg leading-relaxed max-w-xl mb-10"
+              style={{ color: "var(--color-slate)" }}
+            >
+              Building cross-platform mobile applications with React Native and
+              the MERN stack. BSc IT graduate from Mumbai with a passion for
+              creating seamless digital experiences and an aspiring interest in
+              cybersecurity.
+            </p>
+
+            {/* CTA Buttons */}
+            <div ref={ctaRef} className="flex flex-wrap gap-4">
+              <button
+                onClick={() => scrollTo("#projects")}
+                className="btn-primary"
               >
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </button>
-            <button
-              onClick={() => scrollTo("#contact")}
-              className="btn-secondary"
-            >
-              Contact Me
-            </button>
+                View Projects
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </button>
+              <button
+                onClick={() => scrollTo("#contact")}
+                className="btn-secondary"
+              >
+                Contact Me
+              </button>
+            </div>
+          </div>
+
+          {/* Right — Profile Image */}
+          <div
+            ref={imageRef}
+            className="relative flex-shrink-0 hero-profile-wrapper"
+          >
+            {/* Outer decorative ring */}
+            <div className="hero-profile-ring" />
+
+            {/* Image container */}
+            <div className="hero-profile-img-container">
+              <Image
+                src={profileImage}
+                alt="Sujal Mudaliar"
+                fill
+                priority
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 280px, 380px"
+              />
+            </div>
+
+            {/* Floating badge — role */}
+            <div className="hero-badge hero-badge-bottom-left">
+              <span className="hero-badge-dot" />
+              <span className="text-xs font-semibold" style={{ color: "var(--color-navy)" }}>
+                Available for Work
+              </span>
+            </div>
+
+            {/* Floating badge — experience */}
+            <div className="hero-badge hero-badge-top-right">
+              <span className="text-xs font-semibold" style={{ color: "var(--color-navy)" }}>
+                3+ Projects
+              </span>
+            </div>
           </div>
         </div>
       </div>

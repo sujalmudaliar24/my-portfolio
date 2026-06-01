@@ -47,10 +47,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${poppins.variable} ${playfair.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body
         className="min-h-full flex flex-col"
         style={{ fontFamily: "var(--font-body)" }}
+        suppressHydrationWarning
       >
         {children}
       </body>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import GithubCalendar from "@/components/GithubCalendar";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -43,7 +44,7 @@ export default function About() {
       ref={sectionRef}
       id="about"
       className="py-24 md:py-32"
-      style={{ background: "#fff" }}
+      style={{ background: "var(--color-cream)" }}
     >
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -90,168 +91,97 @@ export default function About() {
                 analysis. I believe in writing code that is not just functional,
                 but secure and scalable.
               </p>
+              <GithubCalendar username="sujalmudaliar24" />
             </div>
           </div>
 
-          {/* Right — Timeline / Experience */}
+          {/* Right — Experience / Education / Certifications */}
           <div className="lg:pt-12">
             <span className="section-label about-reveal">Experience</span>
 
-            <div className="timeline-card relative mt-6">
-              {/* Timeline line */}
+            <div className="right-sections mt-6 grid gap-6">
               <div
-                className="absolute left-[5px] top-3 bottom-3 w-px"
-                style={{ background: "var(--color-border)" }}
-              />
-
-              {/* Internship Card */}
-              <div className="relative pl-10">
-                <div className="timeline-dot absolute left-0 top-2" />
-                <div
-                  className="p-6 rounded-xl border"
-                  style={{
-                    background: "var(--color-cream)",
-                    borderColor: "var(--color-border)",
-                  }}
-                >
-                  <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
-                    <div>
-                      <h3
-                        className="text-lg font-semibold"
-                        style={{ color: "var(--color-navy)" }}
-                      >
-                        React Native Developer Intern
-                      </h3>
-                      <p
-                        className="text-sm font-medium"
-                        style={{ color: "var(--color-slate)" }}
-                      >
-                        CyberClipper Infotech LLP
-                      </p>
-                    </div>
-                    <span
-                      className="text-xs font-medium px-3 py-1 rounded-full"
-                      style={{
-                        background: "var(--color-navy)",
-                        color: "#fff",
-                      }}
-                    >
-                      Nov 2025 – Feb 2026
-                    </span>
+                className="section-card about-reveal"
+                style={{ background: "var(--color-cream)", borderColor: "var(--color-border)" }}
+              >
+                <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
+                  <div>
+                    <h3 className="text-lg font-semibold" style={{ color: "var(--color-navy)" }}>
+                      React Native Developer Intern
+                    </h3>
+                    <p className="text-sm font-medium" style={{ color: "var(--color-slate)" }}>
+                      CyberClipper Infotech LLP
+                    </p>
                   </div>
-                  <ul
-                    className="space-y-2 text-sm leading-relaxed"
-                    style={{ color: "var(--color-slate)" }}
+                  <span
+                    className="text-xs font-medium px-3 py-1 rounded-full"
+                    style={{ background: "var(--color-navy)", color: "#fff" }}
                   >
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--color-navy)] shrink-0" />
-                      Developed and enhanced production-level React Native
-                      applications with hands-on experience in UI development
-                      and backend integration
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--color-navy)] shrink-0" />
-                      Integrated REST APIs, real-time data handling, and
-                      implemented state management using Provider for scalable
-                      architecture
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--color-navy)] shrink-0" />
-                      Designed intuitive, responsive UI components aligned with
-                      design requirements across multiple screen sizes
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--color-navy)] shrink-0" />
-                      Collaborated in agile sprints, participating in code
-                      reviews, client meetings, and debugging sessions
-                    </li>
-                  </ul>
+                    Nov 2025 – Feb 2026
+                  </span>
                 </div>
+
+                <ul className="space-y-2 text-sm leading-relaxed" style={{ color: "var(--color-slate)" }}>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-navy)] shrink-0" />
+                    Developed and enhanced production-level React Native applications with hands-on experience in UI development and backend integration
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-navy)] shrink-0" />
+                    Integrated REST APIs, real-time data handling, and implemented state management using Provider for scalable architecture
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-navy)] shrink-0" />
+                    Designed intuitive, responsive UI components aligned with design requirements across multiple screen sizes
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-navy)] shrink-0" />
+                    Collaborated in agile sprints, participating in code reviews, client meetings, and debugging sessions
+                  </li>
+                </ul>
               </div>
 
-              {/* Education */}
-              <div className="relative pl-10 mt-8">
-                <div className="timeline-dot absolute left-0 top-2" />
-                <div
-                  className="p-6 rounded-xl border"
-                  style={{
-                    background: "var(--color-cream)",
-                    borderColor: "var(--color-border)",
-                  }}
-                >
-                  <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
-                    <div>
-                      <h3
-                        className="text-lg font-semibold"
-                        style={{ color: "var(--color-navy)" }}
-                      >
-                        BSc Information Technology
-                      </h3>
-                      <p
-                        className="text-sm font-medium"
-                        style={{ color: "var(--color-slate)" }}
-                      >
-                        Malini Kishor Sanghvi College, Mumbai
-                      </p>
-                    </div>
-                    <span
-                      className="text-xs font-medium px-3 py-1 rounded-full"
-                      style={{
-                        background: "var(--color-warm)",
-                        color: "var(--color-navy)",
-                        border: "1px solid var(--color-border)",
-                      }}
-                    >
-                      CGPA 7.5
-                    </span>
+              <div className="section-card" style={{ background: "var(--color-cream)", borderColor: "var(--color-border)" }}>
+                <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
+                  <div>
+                    <h3 className="text-lg font-semibold" style={{ color: "var(--color-navy)" }}>
+                      BSc Information Technology
+                    </h3>
+                    <p className="text-sm font-medium" style={{ color: "var(--color-slate)" }}>
+                      Malini Kishor Sanghvi College, Mumbai
+                    </p>
                   </div>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "var(--color-slate)" }}
+                  <span
+                    className="text-xs font-medium px-3 py-1 rounded-full"
+                    style={{ background: "var(--color-warm)", color: "var(--color-navy)", border: "1px solid var(--color-border)" }}
                   >
-                    Studied core computer science fundamentals, web technologies,
-                    and software engineering principles. Built a strong
-                    foundation in programming and system design.
-                  </p>
+                    CGPA 7.5
+                  </span>
                 </div>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--color-slate)" }}>
+                  Studied core computer science fundamentals, web technologies, and software engineering principles. Built a strong foundation in programming and system design.
+                </p>
               </div>
 
-              {/* Certifications */}
-              <div className="relative pl-10 mt-8">
-                <div className="timeline-dot absolute left-0 top-2" />
-                <div
-                  className="p-6 rounded-xl border"
-                  style={{
-                    background: "var(--color-cream)",
-                    borderColor: "var(--color-border)",
-                  }}
-                >
-                  <h3
-                    className="text-lg font-semibold mb-3"
-                    style={{ color: "var(--color-navy)" }}
-                  >
-                    Certifications
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Oracle Cloud Infrastructure: Foundations Associate",
-                      "AWS: Foundations of Prompt Engineering",
-                      "R & Python: Data Analysis",
-                      "My Captain: Web Dev & Android",
-                    ].map((cert) => (
-                      <span
-                        key={cert}
-                        className="text-xs font-medium px-3 py-1.5 rounded-lg"
-                        style={{
-                          background: "#fff",
-                          color: "var(--color-navy)",
-                          border: "1px solid var(--color-border)",
-                        }}
-                      >
-                        {cert}
-                      </span>
-                    ))}
-                  </div>
+              <div className="section-card" style={{ background: "var(--color-cream)", borderColor: "var(--color-border)" }}>
+                <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--color-navy)" }}>
+                  Certifications
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Oracle Cloud Infrastructure: Foundations Associate",
+                    "AWS: Foundations of Prompt Engineering",
+                    "R & Python: Data Analysis",
+                    "My Captain: Web Dev & Android",
+                  ].map((cert) => (
+                    <span
+                      key={cert}
+                      className="text-xs font-medium px-3 py-1.5 rounded-lg"
+                      style={{ background: "var(--color-cream)", color: "var(--color-navy)", border: "1px solid var(--color-border)" }}
+                    >
+                      {cert}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

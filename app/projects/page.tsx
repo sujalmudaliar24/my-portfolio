@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import ProjectGallery from "@/components/ProjectGallery";
 
-export default function Projects() {
+export default function ProjectsPage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [displayIdx, setDisplayIdx] = useState(0);
   const [oldIdx, setOldIdx] = useState(0);
@@ -28,7 +28,7 @@ export default function Projects() {
     setFlipDirection(direction);
     setIsFlipping(true);
 
-    // Halfway through animation (375ms), update static page content
+    // Halfway through the animation (375ms of 750ms), swap static display text
     setTimeout(() => {
       setDisplayIdx(newIndex);
     }, 375);
@@ -41,19 +41,19 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 md:py-32 desk-surface border-t border-b border-slate-300">
-      <div className="max-w-5xl mx-auto px-6 md:px-10">
-        <div className="text-center mb-16">
-          <span className="section-label">Selected Work</span>
-          <h2
-            className="text-3xl md:text-4xl font-bold mt-2 text-navy"
-            style={{ fontFamily: "var(--font-heading)" }}
+    <main className="min-h-screen desk-surface py-12 px-4 sm:px-6 lg:px-12 xl:px-16 flex flex-col justify-between">
+      <div className="max-w-5xl mx-auto w-full">
+        {/* Header Navigation */}
+        <div className="mb-8 flex items-center justify-between">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-navy transition"
           >
-            Interactive Portfolio Journal
-          </h2>
-          <p className="mt-4 max-w-lg mx-auto text-base text-slate-600">
-            Flip through the pages of this notebook to browse my mobile applications — from recipe recommendation engines to full e-commerce platforms.
-          </p>
+            ← Back to Home
+          </Link>
+          <div className="rounded-full border border-slate-300 bg-white/80 backdrop-blur-sm px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
+            Interactive Journal — {activeIdx + 1} of {PROJECTS.length}
+          </div>
         </div>
 
         {/* The Master Notebook Container */}
@@ -78,10 +78,10 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* 3D Flipping Page Overlay */}
+          {/* 3D Flipping Page Overlay (Rendered only when turning page) */}
           {isFlipping && flipDirection === "next" && (
             <div className="flip-sheet flip-sheet-right animate-flip-next">
-              {/* Front side of page */}
+              {/* Front side of page: old right page details */}
               <div className="flip-page-face flip-page-front p-8 sm:p-12 pl-12 flex flex-col justify-between bg-[#FDFCFA]">
                 <div>
                   <div className="border-b border-slate-200 pb-2 mb-6 flex justify-between font-mono text-[10px] text-slate-400">
@@ -98,7 +98,7 @@ export default function Projects() {
                 <div className="h-20 border-t border-slate-100 mt-6" />
               </div>
 
-              {/* Back side of page */}
+              {/* Back side of page: new left page details */}
               <div className="flip-page-face flip-page-back p-8 sm:p-12 pr-12 flex flex-col justify-between bg-[#FDFCFA]">
                 <div>
                   <div className="border-b border-red-200 pb-2 mb-6 flex justify-between font-mono text-[10px] text-red-400">
@@ -114,9 +114,10 @@ export default function Projects() {
             </div>
           )}
 
+          {/* isFlipping and prev direction */}
           {isFlipping && flipDirection === "prev" && (
             <div className="flip-sheet flip-sheet-left animate-flip-prev">
-              {/* Front side of page */}
+              {/* Front side of page: old left page details */}
               <div className="flip-page-face flip-page-front p-8 sm:p-12 pr-12 flex flex-col justify-between bg-[#FDFCFA]">
                 <div>
                   <div className="border-b border-red-200 pb-2 mb-6 flex justify-between font-mono text-[10px] text-red-400">
@@ -130,7 +131,7 @@ export default function Projects() {
                 <div className="h-32 bg-slate-50 border border-slate-100 rounded-lg" />
               </div>
 
-              {/* Back side of page */}
+              {/* Back side of page: new right page details */}
               <div className="flip-page-face flip-page-back p-8 sm:p-12 pl-12 flex flex-col justify-between bg-[#FDFCFA]">
                 <div>
                   <div className="border-b border-slate-200 pb-2 mb-6 flex justify-between font-mono text-[10px] text-slate-400">
@@ -166,12 +167,12 @@ export default function Projects() {
                   <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest block mb-2">
                     Case Study
                   </span>
-                  <h3
+                  <h1
                     className="text-3xl font-extrabold text-navy leading-tight"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     {currentProject.title}
-                  </h3>
+                  </h1>
                 </div>
 
                 {/* Polaroid project thumbnail cover */}
@@ -227,16 +228,16 @@ export default function Projects() {
               <div className="space-y-6">
                 {/* Lined paper text formatting */}
                 <div className="notebook-line-text text-slate-700 text-sm sm:text-base leading-[28px] pr-2">
-                  <h4 className="text-lg font-bold text-navy mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h3 className="text-lg font-bold text-navy mb-2" style={{ fontFamily: "var(--font-heading)" }}>
                     Overview:
-                  </h4>
+                  </h3>
                   <p className="mb-4">
                     {currentProject.description}
                   </p>
 
-                  <h4 className="text-base font-bold text-navy mb-1 mt-6" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h3 className="text-base font-bold text-navy mb-1 mt-6" style={{ fontFamily: "var(--font-heading)" }}>
                     Applied Stack:
-                  </h4>
+                  </h3>
                   <p className="font-semibold text-xs text-slate-500 mb-4">
                     {currentProject.tech.join(" · ")}
                   </p>
@@ -277,51 +278,50 @@ export default function Projects() {
                     className="text-xs font-bold text-slate-500 hover:text-navy transition"
                   >
                     Live Demo
-                  </a>
-                )}
-              </div>
-
-              {/* Mobile next/prev controls */}
-              <div className="flex gap-2 lg:hidden">
-                <button
-                  disabled={activeIdx === 0}
-                  onClick={() => handlePageTurn(activeIdx - 1)}
-                  className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
-                >
-                  ← Prev
-                </button>
-                <button
-                  disabled={activeIdx === PROJECTS.length - 1}
-                  onClick={() => handlePageTurn(activeIdx + 1)}
-                  className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
-                >
-                  Next →
-                </button>
-              </div>
+                </a>
+              )}
             </div>
-          </section>
-        </div>
 
-        {/* Desktop bottom quick page-turn arrow indicators */}
-        <div className="hidden lg:flex justify-between max-w-5xl mx-auto mt-6 px-4">
-          <button
-            onClick={() => handlePageTurn(activeIdx - 1)}
-            disabled={activeIdx === 0 || isFlipping}
-            className="group flex items-center gap-2 text-sm font-semibold text-slate-600 disabled:opacity-30 transition hover:text-navy cursor-pointer"
-          >
-            <span className="transform transition-transform group-hover:-translate-x-1">←</span>
-            <span>Turn Left (Previous Project)</span>
-          </button>
+            {/* Mobile next/prev controls */}
+            <div className="flex gap-2 lg:hidden">
+              <button
+                disabled={activeIdx === 0}
+                onClick={() => handlePageTurn(activeIdx - 1)}
+                className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
+              >
+                ← Prev
+              </button>
+              <button
+                disabled={activeIdx === PROJECTS.length - 1}
+                onClick={() => handlePageTurn(activeIdx + 1)}
+                className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
+              >
+                Next →
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
 
-          <button
-            onClick={() => handlePageTurn(activeIdx + 1)}
-            disabled={activeIdx === PROJECTS.length - 1 || isFlipping}
-            className="group flex items-center gap-2 text-sm font-semibold text-slate-600 disabled:opacity-30 transition hover:text-navy cursor-pointer"
-          >
-            <span>Turn Right (Next Project)</span>
-            <span className="transform transition-transform group-hover:translate-x-1">→</span>
-          </button>
-        </div>
+      {/* Desktop bottom quick page-turn arrow indicators */}
+      <div className="hidden lg:flex justify-between max-w-5xl mx-auto mt-6 px-4">
+        <button
+          onClick={() => handlePageTurn(activeIdx - 1)}
+          disabled={activeIdx === 0 || isFlipping}
+          className="group flex items-center gap-2 text-sm font-semibold text-slate-600 disabled:opacity-30 transition hover:text-navy cursor-pointer"
+        >
+          <span className="transform transition-transform group-hover:-translate-x-1">←</span>
+          <span>Turn Left (Previous Project)</span>
+        </button>
+
+        <button
+          onClick={() => handlePageTurn(activeIdx + 1)}
+          disabled={activeIdx === PROJECTS.length - 1 || isFlipping}
+          className="group flex items-center gap-2 text-sm font-semibold text-slate-600 disabled:opacity-30 transition hover:text-navy cursor-pointer"
+        >
+          <span>Turn Right (Next Project)</span>
+          <span className="transform transition-transform group-hover:translate-x-1">→</span>
+        </button>
       </div>
 
       {/* Improved Fullscreen Media Gallery Overlay */}
@@ -332,6 +332,6 @@ export default function Projects() {
           onClose={() => setGalleryOpen(false)}
         />
       )}
-    </section>
+    </main>
   );
 }
