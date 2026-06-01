@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
@@ -10,9 +10,11 @@ export default function ProjectsPage() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [displayIdx, setDisplayIdx] = useState(0);
   const [oldIdx, setOldIdx] = useState(0);
-  
+
   const [isFlipping, setIsFlipping] = useState(false);
-  const [flipDirection, setFlipDirection] = useState<"next" | "prev" | null>(null);
+  const [flipDirection, setFlipDirection] = useState<"next" | "prev" | null>(
+    null,
+  );
   const [galleryOpen, setGalleryOpen] = useState(false);
 
   const currentProject = PROJECTS[displayIdx];
@@ -21,7 +23,7 @@ export default function ProjectsPage() {
 
   const handlePageTurn = (newIndex: number) => {
     if (newIndex === activeIdx || isFlipping) return;
-    
+
     const direction = newIndex > activeIdx ? "next" : "prev";
     setOldIdx(activeIdx);
     setActiveIdx(newIndex);
@@ -89,7 +91,10 @@ export default function ProjectsPage() {
                     <span>PAGE.02</span>
                   </div>
                   <div className="lined-paper-right text-slate-700 text-sm leading-[28px] pr-2">
-                    <p className="font-bold text-navy text-base mb-1" style={{ fontFamily: "var(--font-heading)" }}>
+                    <p
+                      className="font-bold text-navy text-base mb-1"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
                       Implementations:
                     </p>
                     <p>{oldProject.description.substring(0, 120)}...</p>
@@ -105,7 +110,10 @@ export default function ProjectsPage() {
                     <span>PROJECT DETAILS</span>
                     <span>PAGE.01</span>
                   </div>
-                  <h2 className="text-2xl font-bold text-navy" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h2
+                    className="text-2xl font-bold text-navy"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
                     {nextProjectToFlip.title}
                   </h2>
                 </div>
@@ -124,7 +132,10 @@ export default function ProjectsPage() {
                     <span>PROJECT DETAILS</span>
                     <span>PAGE.01</span>
                   </div>
-                  <h2 className="text-2xl font-bold text-navy" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h2
+                    className="text-2xl font-bold text-navy"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
                     {oldProject.title}
                   </h2>
                 </div>
@@ -139,7 +150,10 @@ export default function ProjectsPage() {
                     <span>PAGE.02</span>
                   </div>
                   <div className="lined-paper-right text-slate-700 text-sm leading-[28px] pr-2">
-                    <p className="font-bold text-navy text-base mb-1" style={{ fontFamily: "var(--font-heading)" }}>
+                    <p
+                      className="font-bold text-navy text-base mb-1"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
                       Implementations:
                     </p>
                     <p>{nextProjectToFlip.description.substring(0, 120)}...</p>
@@ -177,7 +191,7 @@ export default function ProjectsPage() {
 
                 {/* Polaroid project thumbnail cover */}
                 <div className="max-w-md mx-auto lg:mx-0 pt-4">
-                  <div 
+                  <div
                     onClick={() => setGalleryOpen(true)}
                     className="notebook-polaroid cursor-pointer group"
                   >
@@ -228,14 +242,18 @@ export default function ProjectsPage() {
               <div className="space-y-6">
                 {/* Lined paper text formatting */}
                 <div className="notebook-line-text text-slate-700 text-sm sm:text-base leading-[28px] pr-2">
-                  <h3 className="text-lg font-bold text-navy mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h3
+                    className="text-lg font-bold text-navy mb-2"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
                     Overview:
                   </h3>
-                  <p className="mb-4">
-                    {currentProject.description}
-                  </p>
+                  <p className="mb-4">{currentProject.description}</p>
 
-                  <h3 className="text-base font-bold text-navy mb-1 mt-6" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h3
+                    className="text-base font-bold text-navy mb-1 mt-6"
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
                     Applied Stack:
                   </h3>
                   <p className="font-semibold text-xs text-slate-500 mb-4">
@@ -282,25 +300,26 @@ export default function ProjectsPage() {
                 )}
               </div>
 
-            {/* Mobile next/prev controls */}
-            <div className="flex gap-2 lg:hidden">
-              <button
-                disabled={activeIdx === 0}
-                onClick={() => handlePageTurn(activeIdx - 1)}
-                className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
-              >
-                ← Prev
-              </button>
-              <button
-                disabled={activeIdx === PROJECTS.length - 1}
-                onClick={() => handlePageTurn(activeIdx + 1)}
-                className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
-              >
-                Next →
-              </button>
+              {/* Mobile next/prev controls */}
+              <div className="flex gap-2 lg:hidden">
+                <button
+                  disabled={activeIdx === 0}
+                  onClick={() => handlePageTurn(activeIdx - 1)}
+                  className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
+                >
+                  ← Prev
+                </button>
+                <button
+                  disabled={activeIdx === PROJECTS.length - 1}
+                  onClick={() => handlePageTurn(activeIdx + 1)}
+                  className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold disabled:opacity-50"
+                >
+                  Next →
+                </button>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
 
       {/* Desktop bottom quick page-turn arrow indicators */}
@@ -310,7 +329,9 @@ export default function ProjectsPage() {
           disabled={activeIdx === 0 || isFlipping}
           className="group flex items-center gap-2 text-sm font-semibold text-slate-600 disabled:opacity-30 transition hover:text-navy cursor-pointer"
         >
-          <span className="transform transition-transform group-hover:-translate-x-1">←</span>
+          <span className="transform transition-transform group-hover:-translate-x-1">
+            ←
+          </span>
           <span>Turn Left (Previous Project)</span>
         </button>
 
@@ -320,7 +341,9 @@ export default function ProjectsPage() {
           className="group flex items-center gap-2 text-sm font-semibold text-slate-600 disabled:opacity-30 transition hover:text-navy cursor-pointer"
         >
           <span>Turn Right (Next Project)</span>
-          <span className="transform transition-transform group-hover:translate-x-1">→</span>
+          <span className="transform transition-transform group-hover:translate-x-1">
+            →
+          </span>
         </button>
       </div>
 

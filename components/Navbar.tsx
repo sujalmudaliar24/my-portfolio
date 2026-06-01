@@ -37,13 +37,13 @@ export default function Navbar() {
         scrolled ? "navbar-scrolled" : ""
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="text-lg font-semibold tracking-tight"
+            className="text-lg font-semibold tracking-tight ml-2 md:ml-4"
             style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
           >
             Sujal<span className="text-[var(--color-slate)]">.</span>

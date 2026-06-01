@@ -5,8 +5,8 @@ import { useState } from "react";
 
 // react-github-calendar is a client-side only component; import dynamically
 // ensure we return the module's default export (the React component)
-const GitHubCalendar = dynamic(
-  () => import("react-github-calendar").then((mod) => mod.GitHubCalendar || mod.default),
+const GitHubCalendar: any = dynamic(
+  () => import("react-github-calendar").then((mod) => (mod as any).GitHubCalendar || (mod as any).default),
   { ssr: false }
 );
 

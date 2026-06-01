@@ -35,7 +35,7 @@ export default function Contact() {
       id="contact"
       className="py-24 md:py-32 grid-bg"
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 gap-16 lg:gap-24">
           {/* Left — Info */}
           <div>
