@@ -261,7 +261,7 @@ export default function ProjectsPage() {
 
             {/* Notebook page footer actions */}
             <div className="mt-8 pt-4 border-t border-slate-200 flex flex-wrap justify-between gap-4 items-center">
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <a
                   href={currentProject.github}
                   target="_blank"
@@ -278,9 +278,9 @@ export default function ProjectsPage() {
                     className="text-xs font-bold text-slate-500 hover:text-navy transition"
                   >
                     Live Demo
-                </a>
-              )}
-            </div>
+                  </a>
+                )}
+              </div>
 
             {/* Mobile next/prev controls */}
             <div className="flex gap-2 lg:hidden">

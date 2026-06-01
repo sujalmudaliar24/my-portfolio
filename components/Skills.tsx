@@ -2,7 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import Image from "next/image";
 import GithubCalendar from "@/components/GithubCalendar";
+import githubIcon from "@/src/github.png";
+import linkedinIcon from "@/src/linkedin.png";
 
 const MARQUEE_ITEMS_ROW1 = [
   "React Native",
@@ -149,6 +152,29 @@ export default function Skills() {
         {/* GitHub contributions */}
         <div className="mt-8">
           <GithubCalendar username="sujalmudaliar24" />
+        </div>
+        {/* Social icons under calendar */}
+        <div className="mt-6 flex items-center justify-center gap-4">
+          <a
+            href="https://github.com/sujalmudaliar24"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="w-12 h-12 rounded-xl flex items-center justify-center border"
+            style={{ borderColor: "var(--color-border)", background: "#fff" }}
+          >
+            <Image src={githubIcon} alt="GitHub" width={24} height={24} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sujal-mudaliar-2402sm"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="w-12 h-12 rounded-xl flex items-center justify-center border"
+            style={{ borderColor: "var(--color-border)", background: "#fff" }}
+          >
+            <Image src={linkedinIcon} alt="LinkedIn" width={24} height={24} />
+          </a>
         </div>
       </div>
     </section>
