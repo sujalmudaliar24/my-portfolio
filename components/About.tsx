@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import GithubCalendar from "@/components/GithubCalendar";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -46,10 +45,10 @@ export default function About() {
       className="py-24 md:py-32"
       style={{ background: "var(--color-cream)" }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 items-start">
           {/* Left — Text */}
-          <div>
+          <div className="lg:col-span-2">
             <span className="section-label about-reveal">About Me</span>
             <h2
               className="about-reveal text-3xl md:text-4xl font-bold mb-8 leading-snug"
@@ -91,12 +90,11 @@ export default function About() {
                 analysis. I believe in writing code that is not just functional,
                 but secure and scalable.
               </p>
-              <GithubCalendar username="sujalmudaliar24" />
             </div>
           </div>
 
           {/* Right — Experience / Education / Certifications */}
-          <div className="lg:pt-12">
+          <div className="lg:pt-12 lg:col-span-1">
             <span className="section-label about-reveal">Experience</span>
 
             <div className="right-sections mt-6 grid gap-6">
@@ -141,7 +139,7 @@ export default function About() {
                 </ul>
               </div>
 
-              <div className="section-card" style={{ background: "var(--color-cream)", borderColor: "var(--color-border)" }}>
+              <div className="section-card" style={{ background: "var(--color-warm)", borderColor: "var(--color-border)" }}>
                 <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
                   <div>
                     <h3 className="text-lg font-semibold" style={{ color: "var(--color-navy)" }}>
@@ -163,8 +161,9 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="section-card" style={{ background: "var(--color-cream)", borderColor: "var(--color-border)" }}>
+              <div className="section-card" style={{ background: "var(--color-warm)", borderColor: "var(--color-border)" }}>
                 <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--color-navy)" }}>
+
                   Certifications
                 </h3>
                 <div className="flex flex-wrap gap-2">

@@ -22,12 +22,16 @@ export type Project = {
   live: string | null;
   image: string | StaticImageData;
   images?: Array<string | StaticImageData>;
+  apkUrl?: string | null;
 };
+
 
 export const PROJECTS: Project[] = [
   {
     title: "Cookify — Recipe Recommendation App",
     slug: "cookify",
+    apkUrl: "/apks/Cookify.apk",
+
     description:
       "A cross-platform React Native application with a Flask backend that recommends recipes using K-Means clustering and Spoonacular API data, featuring AsyncStorage persistence and Firebase auth.",
     tech: ["React Native", "Flask", "K-Means", "Spoonacular API", "AsyncStorage", "Firebase"],
@@ -40,6 +44,8 @@ export const PROJECTS: Project[] = [
   {
     title: "DripHouse — E-Commerce App",
     slug: "driphouse",
+    apkUrl: "/apks/DripHouse.apk",
+
     description:
       "A modular React Native e-commerce app with Appwrite authentication, session persistence, nested navigation, and Hermes optimization for smooth mobile performance.",
     tech: ["React Native CLI", "Appwrite", "AsyncStorage", "Hermes", "Stack Navigation"],
@@ -52,6 +58,8 @@ export const PROJECTS: Project[] = [
   {
     title: "Calmi — Mental Wellness Companion",
     slug: "calmi",
+    apkUrl: "/apks/calmi.apk",
+
     description:
       "A privacy-first mental wellness mobile app that supports mood tracking, empathetic AI journaling, and targeted micro-wellness activities.",
     tech: ["React Native", "TypeScript", "Google Gemini", "AsyncStorage", "React Native Voice", "Notifee"],

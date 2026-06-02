@@ -53,9 +53,10 @@ export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} id="skills" className="py-24 md:py-32" style={{ background: "#fff" }}>
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+    <section ref={sectionRef} id="skills" className="py-24 md:py-32" style={{ background: "var(--color-cream)" }}>
+        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
         <div className="text-center mb-16">
+
           <span className="section-label">Expertise</span>
           <h2
             className="text-3xl md:text-4xl font-bold mt-2"

@@ -114,11 +114,11 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-10 xl:px-16 py-32 md:py-40 relative z-10 w-full">
+      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-32 md:py-40 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 xl:gap-24">
 
           {/* Left — Text Content */}
-          <div className="flex-1 max-w-2xl">
+          <div className="flex-1 lg:pr-12">
             {/* Label */}
             <div className="section-label mb-6">Sujal Mudaliar — Mumbai</div>
 
@@ -150,7 +150,7 @@ export default function Hero() {
             {/* Description */}
             <p
               ref={descRef}
-              className="text-base md:text-lg leading-relaxed max-w-xl mb-10"
+              className="text-base md:text-lg leading-relaxed mb-10"
               style={{ color: "var(--color-slate)" }}
             >
               Building cross-platform mobile applications with React Native and
@@ -192,7 +192,7 @@ export default function Hero() {
           {/* Right — Profile Image */}
           <div
             ref={imageRef}
-            className="relative flex-shrink-0 hero-profile-wrapper"
+            className="relative flex-shrink-0 hero-profile-wrapper w-[320px] h-[380px] sm:w-[380px] sm:h-[460px] md:w-[480px] md:h-[560px] lg:w-[560px] lg:h-[680px]"
           >
             {/* Outer decorative ring */}
             <div className="hero-profile-ring" />
@@ -212,7 +212,13 @@ export default function Hero() {
             {/* Floating badge — role */}
             <div className="hero-badge hero-badge-bottom-left">
               <span className="hero-badge-dot" />
-              <span className="text-xs font-semibold" style={{ color: "var(--color-navy)" }}>
+              <span
+                className="text-xs font-semibold"
+                style={{
+                  color: "#070A12",
+                  textShadow: "0 1px 0 rgba(255,255,255,0.55)",
+                }}
+              >
                 Available for Work
               </span>
             </div>

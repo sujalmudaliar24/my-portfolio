@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getProjectBySlug, PROJECTS } from "@/lib/projects";
 import ProjectGallery from "@/components/ProjectGallery";
 
+import SiteShell from "@/components/SiteShell";
+
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -15,10 +17,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
 
   return (
-    <main className="min-h-screen bg-[#F0EEE9] py-10 px-4 sm:px-6 lg:px-12 xl:px-16 grid-bg">
-      <div className="mx-auto w-full max-w-7xl">
-        {/* Navigation Breadcrumb */}
-        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <SiteShell pageClassName="grid-bg">
+      <main className="min-h-screen bg-[#F0EEE9] py-10 px-4 sm:px-6 lg:px-12 lg:px-24 xl:px-32">
+        <div className="mx-auto w-full max-w-7xl">
+          {/* Navigation Breadcrumb */}
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 transition hover:text-navy"
@@ -112,14 +116,28 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <h3 className="text-lg font-bold text-navy mb-2" style={{ fontFamily: "var(--font-heading)" }}>
                     Overview & Background
                   </h3>
-                  <p className="mb-6">
+                  <p className="mb-6 text-slate-700">
                     {project.description}
                   </p>
+
+                  {project.apkUrl && (
+                    <div className="mt-4">
+                      <a
+                        href={project.apkUrl}
+                        download
+                        className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-navy px-6 py-3.5 text-xs font-bold text-white transition hover:bg-[#1a2f54] shadow-md shadow-navy/10"
+                      >
+                        Download APK
+                      </a>
+                    </div>
+                  )}
+
 
                   <h3 className="text-lg font-bold text-navy mb-2 mt-8" style={{ fontFamily: "var(--font-heading)" }}>
                     Key Implementations
                   </h3>
                   <ul className="list-disc pl-5 space-y-2 mb-6">
+
                     <li>Developed clean and responsive views tailored for smooth interaction on various screen dimensions.</li>
                     <li>Integrated scalable backend communication with optimized session handlers.</li>
                     <li>Utilized React Native features ensuring fast rendering speeds and minimal memory footprints.</li>
@@ -183,5 +201,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
     </main>
+  </SiteShell>
   );
 }
+
+
+

@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #F8F8F6;
-  --color-warm: #F0EEE9;
-  --color-navy: #1B2A4A;
-  --color-navy-light: #2D3F5E;
-  --color-slate: #64748B;
-  --color-slate-light: #94A3B8;
-  --color-border: #E5E2DC;
-  --color-border-light: #F0EDE7;
+  /* Default theme: Dark */
+  --color-cream: #070A12; /* used as surface/background */
+  --color-warm: #0B1220;
+  --color-navy: #D7E3FF;
+  --color-navy-light: #AFC6FF;
+  --color-slate: #A6B4CC;
+  --color-slate-light: #7B8AA6;
+  --color-border: rgba(148, 163, 184, 0.22);
+  --color-border-light: rgba(148, 163, 184, 0.14);
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Poppins", system-ui, sans-serif;
 }
+
+html.dark {
+  /* no-op: default already dark, kept for future toggle compatibility */
+}
+
 
 /* ───── Base ───── */
 * {
@@ -25,6 +31,11 @@ html {
   overflow-x: hidden;
 }
 
+/* Scale base font-size responsively so text and tailwind rem-based sizes grow on wide screens */
+html {
+  font-size: clamp(16px, 0.9vw + 14px, 18px);
+}
+
 body {
   background-color: var(--color-cream);
   color: var(--color-navy);
@@ -34,25 +45,30 @@ body {
   overflow-x: hidden;
 }
 
+
 ::selection {
   background-color: var(--color-navy);
-  color: #fff;
+  color: #070A12;
 }
+
 
 /* ───── Grid Background Texture ───── */
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(27, 42, 74, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(27, 42, 74, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(215, 227, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(215, 227, 255, 0.07) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
+
 /* ───── Navbar ───── */
 .navbar-scrolled {
-  background-color: rgba(248, 248, 246, 0.85);
+  background-color: rgba(7, 10, 18, 0.85);
+
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid var(--color-border);
+  
 }
 
 /* ───── Marquee ───── */

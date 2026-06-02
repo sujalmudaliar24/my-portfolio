@@ -34,7 +34,7 @@ export default function ProjectGallery({ images, title, onClose }: ProjectGaller
 
   // The actual device mockup gallery element
   const galleryContent = (
-    <div className="flex flex-col items-center justify-between w-full h-full max-w-4xl mx-auto p-4 select-none">
+    <div className="flex flex-col items-center justify-between w-full h-full max-w-7xl mx-auto p-6 select-none">
       {/* Header (Only in modal state) */}
       {isModal && (
         <div className="w-full flex items-center justify-between border-b border-white/10 pb-4 mb-4 text-white">
@@ -77,7 +77,7 @@ export default function ProjectGallery({ images, title, onClose }: ProjectGaller
         )}
 
         {/* Premium CSS Smartphone Bezel Mockup */}
-        <div className="phone-mockup-wrapper transform scale-90 sm:scale-100 transition-transform">
+        <div className="phone-mockup-wrapper transform scale-95 lg:scale-100 transition-transform">
           <div className="phone-mockup-screen">
             {/* Dynamic Island camera notch */}
             <div className="phone-mockup-island flex items-center justify-between px-3.5">
@@ -146,7 +146,7 @@ export default function ProjectGallery({ images, title, onClose }: ProjectGaller
         <div className="absolute inset-0 cursor-default" onClick={onClose} />
         
         {/* Modal Window Container */}
-        <div className="relative z-10 w-full max-w-lg rounded-3xl border border-white/10 bg-slate-900/90 shadow-2xl p-4 sm:p-6 overflow-hidden">
+        <div className="relative z-10 w-full max-w-lg md:max-w-2xl lg:max-w-4xl rounded-3xl border border-white/10 bg-slate-900/90 shadow-2xl p-4 sm:p-6 overflow-hidden">
           {galleryContent}
         </div>
       </div>

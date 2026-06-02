@@ -35,7 +35,7 @@ export default function Contact() {
       id="contact"
       className="py-24 md:py-32 grid-bg"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-1 gap-16 lg:gap-24">
           {/* Left — Info */}
           <div>
@@ -46,7 +46,7 @@ export default function Contact() {
             >
               Let&apos;s connect and
               <br />
-                <span className="text-(--color-slate)">build something great.</span>
+              <span className="text-[var(--color-slate)]">build something great.</span>
             </h2>
             <p
               className="contact-reveal text-base leading-relaxed mb-10"
@@ -119,8 +119,8 @@ export default function Contact() {
                 href="https://github.com/sujalmudaliar24"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 hover:bg-(--color-navy) hover:border-(--color-navy)"
-                style={{ borderColor: "var(--color-border)", background: "#fff" }}
+                className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 hover:bg-[var(--color-navy)] hover:border-[var(--color-navy)]"
+                style={{ borderColor: "var(--color-border)", background: "var(--color-warm)" }}
                 aria-label="GitHub"
               >
                 <Image src={githubIcon} alt="GitHub" width={24} height={24} />
@@ -129,8 +129,8 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/sujal-mudaliar-2402sm"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 hover:bg-(--color-navy) hover:border-(--color-navy)"
-                style={{ borderColor: "var(--color-border)", background: "#fff" }}
+                className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 hover:bg-[var(--color-navy)] hover:border-[var(--color-navy)]"
+                style={{ borderColor: "var(--color-border)", background: "var(--color-warm)" }}
                 aria-label="LinkedIn"
               >
                 <Image src={linkedinIcon} alt="LinkedIn" width={24} height={24} />
