@@ -225,7 +225,7 @@ export default function Hero() {
 
             {/* Floating badge — experience */}
             <div className="hero-badge hero-badge-top-right">
-              <span className="text-xs font-semibold" style={{ color: "var(--color-navy)" }}>
+              <span className="text-xs font-semibold" style={{ color: "var(--color-black)" }}>
                 3+ Projects
               </span>
             </div>

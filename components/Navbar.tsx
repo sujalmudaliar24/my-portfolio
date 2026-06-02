@@ -1,6 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from 'next/image';
+
+import githubPng from "../src/github.png";
+import linkedinPng from "../src/linkedin.png";
+
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -48,18 +53,17 @@ export default function Navbar() {
     >
       <div className="w-full px-4 sm:px-6 lg:px-10">
         <div
-          className={`relative flex items-center justify-between h-16 px-6 rounded-full transition-all duration-500 ${
-
+          className={`relative flex items-center h-16 px-6 rounded-full transition-all duration-500 ${
             scrolled
               ? "backdrop-blur-xl shadow-xl"
               : "backdrop-blur-md shadow-md"
           }`}
-            style={{
-              background: "rgba(7,10,18,0.78)",
-              border: "1px solid rgba(148,163,184,0.18)",
-            }}
-
+          style={{
+            background: "rgba(7,10,18,0.78)",
+            border: "1px solid rgba(148,163,184,0.18)",
+          }}
         >
+
           {/* Logo */}
           <a
             href="#hero"
@@ -76,6 +80,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -107,8 +112,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right Spacer */}
-          <div className="hidden md:block w-16" />
+
+          {/* Desktop Right Icons */}
+          <div className="hidden md:flex items-center justify-end gap-3 z-10 w-16" />
+
+
+
+
 
           {/* Mobile Menu Button */}
           <button
@@ -132,6 +142,44 @@ export default function Navbar() {
               }`}
             />
           </button>
+          {/* Desktop Social Icons */}
+          <div className="hidden md:flex items-center gap-3 z-10">
+
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex items-center justify-center rounded-full p-2 transition-colors hover:bg-white/5"
+              style={{ border: "1px solid rgba(148,163,184,0.18)", background: "transparent" }}
+            >
+              <Image
+                src={linkedinPng}
+                alt=""
+                width={24}
+                height={24}
+                className="object-contain"
+              />
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="inline-flex items-center justify-center rounded-full p-2 transition-colors hover:bg-white/5"
+              style={{ border: "1px solid rgba(148,163,184,0.18)", background: "transparent" }}
+            >
+              <Image
+                src={githubPng}
+                alt=""
+                width={24}
+                height={24}
+                className="object-contain"
+                style={{ filter: 'invert(1)' }}
+              />
+            </a>
+          </div>
+
         </div>
 
         {/* Mobile Menu */}
@@ -148,7 +196,6 @@ export default function Navbar() {
               background: "rgba(7,10,18,0.94)",
               border: "1px solid rgba(148,163,184,0.18)",
             }}
-
           >
             {NAV_LINKS.map((link) => (
               <a
@@ -170,6 +217,43 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+
+            {/* Mobile Social Icons */}
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="inline-flex items-center justify-center rounded-full p-2 transition-colors hover:bg-white/5"
+                style={{ border: "1px solid rgba(148,163,184,0.18)", background: "transparent" }}
+              >
+                <Image
+                  src={linkedinPng}
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="inline-flex items-center justify-center rounded-full p-2 transition-colors hover:bg-white/5"
+                style={{ border: "1px solid rgba(148,163,184,0.18)", background: "transparent" }}
+              >
+                <Image
+                  src={githubPng}
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                  style={{ filter: 'invert(1)' }}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>

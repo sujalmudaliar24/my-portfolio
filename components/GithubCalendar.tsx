@@ -26,8 +26,14 @@ export default function GithubCalendar({ username = "sujalmudaliar24" }: { usern
   const [user] = useState(username);
 
   return (
-    <div className="github-calendar-wrapper mt-6" aria-label="GitHub contributions calendar">
-      <div className="rounded-lg border border-slate-200 p-4 bg-white">
+    <div
+      className="github-calendar-wrapper mt-6 flex justify-center"
+      aria-label="GitHub contributions calendar"
+    >
+      <div
+        className="rounded-lg border border-slate-200 p-4"
+        style={{ backgroundColor: "#000", color: "#D7E3FF"  }}
+      >
         <GitHubCalendar username={user} />
       </div>
     </div>

@@ -59,7 +59,7 @@ export default function Projects() {
 
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 sm:py-24 md:py-32">
+    <section id="projects" ref={sectionRef} className="py-24 md:py-32">
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24">
         <div className="text-center mb-16 relative">
           <div className="projects-loader" aria-hidden="true">

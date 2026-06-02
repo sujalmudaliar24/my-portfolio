@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+export type { StaticImageData };
 import cookify1 from "@/src/Cookify1.jpeg";
 import cookify2 from "@/src/Cookify2.jpeg";
 import cookify3 from "@/src/Cookify 3.jpeg";
@@ -30,7 +31,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Cookify — Recipe Recommendation App",
     slug: "cookify",
-    apkUrl: "/apks/Cookify.apk",
+    apkUrl: "https://drive.google.com/file/d/1-JX4Ohge5TOANNVueXKyxdwvCKfHxzDQ/view?usp=sharing",
 
     description:
       "A cross-platform React Native application with a Flask backend that recommends recipes using K-Means clustering and Spoonacular API data, featuring AsyncStorage persistence and Firebase auth.",
@@ -44,7 +45,8 @@ export const PROJECTS: Project[] = [
   {
     title: "DripHouse — E-Commerce App",
     slug: "driphouse",
-    apkUrl: "/apks/DripHouse.apk",
+    apkUrl: "https://drive.google.com/file/d/1-NF3fwlqU_2OKGzfKtMo9h1uDOvfJf4i/view?usp=sharing",
+
 
     description:
       "A modular React Native e-commerce app with Appwrite authentication, session persistence, nested navigation, and Hermes optimization for smooth mobile performance.",
@@ -58,7 +60,8 @@ export const PROJECTS: Project[] = [
   {
     title: "Calmi — Mental Wellness Companion",
     slug: "calmi",
-    apkUrl: "/apks/calmi.apk",
+    apkUrl: "https://drive.google.com/file/d/1oVr3r_obtVy7R1zOrUF8s-0-dUp21NO6/view?usp=sharing",
+
 
     description:
       "A privacy-first mental wellness mobile app that supports mood tracking, empathetic AI journaling, and targeted micro-wellness activities.",

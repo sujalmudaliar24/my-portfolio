@@ -1,9 +1,14 @@
 "use client";
 
+import githubPng from "../src/github.png";
+import linkedinPng from "../src/linkedin.png";
+import Image from 'next/image';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
+
     <footer
       className="py-8 border-t"
       style={{
@@ -19,29 +24,45 @@ export default function Footer() {
           >
             &copy; {currentYear} Sujal Mudaliar — Designed &amp; Built with passion.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm transition-colors hover:text-[var(--color-navy)]"
-              style={{ color: "var(--color-slate-light)" }}
+              aria-label="LinkedIn"
+              className="inline-flex items-center justify-center rounded-full p-2 transition-colors hover:bg-white/5"
+              style={{ border: "1px solid var(--color-border)", background: "transparent" }}
             >
-              LinkedIn
+              <Image
+                src={linkedinPng}
+                alt=""
+                width={24}
+                height={24}
+                className="object-contain"
+              />
             </a>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm transition-colors hover:text-[var(--color-navy)]"
-              style={{ color: "var(--color-slate-light)" }}
+              aria-label="GitHub"
+              className="inline-flex items-center justify-center rounded-full p-2 transition-colors hover:bg-white/5"
+              style={{ border: "1px solid var(--color-border)", background: "transparent" }}
             >
-              GitHub
+              <Image
+                src={githubPng}
+                alt=""
+                width={24}
+                height={24}
+                className="object-contain"
+                style={{ filter: 'invert(1)' }}
+              />
             </a>
             <a
               href="mailto:sujalm.tech@gmail.com"
-              className="text-sm transition-colors hover:text-[var(--color-navy)]"
-              style={{ color: "var(--color-slate-light)" }}
+              aria-label="Email"
+              className="inline-flex items-center justify-center rounded-full px-3 py-2 text-sm transition-colors hover:bg-white/5"
+              style={{ border: "1px solid var(--color-border)", color: "var(--color-slate-light)" }}
             >
               Email
             </a>
