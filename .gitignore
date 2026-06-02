@@ -45,3 +45,8 @@ next-env.d.ts
 *.apk
 
 public/apks/*.apk
+
+
+
+*.apk
+src/apks/
