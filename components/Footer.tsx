@@ -10,14 +10,17 @@ export default function Footer() {
   return (
 
     <footer
-      className="py-8 border-t"
+      className="py-12 border-t"
       style={{
         borderColor: "var(--color-border)",
         background: "var(--color-cream)",
       }}
     >
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div
+        className="w-full max-w-[1600px] mx-auto"
+        style={{ padding: "0 clamp(2.5rem, 6vw, 9rem)" }}
+      >
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <p
             className="text-sm"
             style={{ color: "var(--color-slate-light)" }}

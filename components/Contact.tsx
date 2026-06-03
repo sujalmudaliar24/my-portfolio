@@ -33,15 +33,19 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="py-24 md:py-32 grid-bg"
+      className="py-28 md:py-36 grid-bg"
     >
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
-        <div className="grid grid-cols-1 gap-16 lg:gap-24">
+      <div
+        className="w-full max-w-[1600px] mx-auto"
+        style={{ padding: "0 clamp(2.5rem, 6vw, 9rem)" }}
+      >
+        <div className="grid grid-cols-1 gap-20 lg:gap-28">
+
           {/* Left — Info */}
           <div>
-            <span className="section-label contact-reveal">Get In Touch</span>
+            <span className="section-label contact-reveal mb-4 block">Get In Touch</span>
             <h2
-              className="contact-reveal text-3xl md:text-4xl font-bold mt-2 mb-6 leading-snug"
+              className="contact-reveal text-3xl md:text-4xl font-bold mt-2 mb-8 leading-snug"
               style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
             >
               Let&apos;s connect and
@@ -49,7 +53,7 @@ export default function Contact() {
               <span className="text-[var(--color-slate)]">build something great.</span>
             </h2>
             <p
-              className="contact-reveal text-base leading-relaxed mb-10"
+              className="contact-reveal text-base leading-relaxed mb-10 pr-4"
               style={{ color: "var(--color-slate)" }}
             >
               Whether you have a mobile app idea, need a React Native developer
@@ -58,7 +62,7 @@ export default function Contact() {
             </p>
 
             {/* Contact Info */}
-            <div className="contact-reveal space-y-4 mb-8">
+            <div className="contact-reveal space-y-5 mb-10">
               <div className="flex items-center gap-3">
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center"
@@ -114,7 +118,7 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="contact-reveal flex items-center gap-5">
+            <div className="contact-reveal flex items-center gap-5 mt-2">
               <a
                 href="https://github.com/sujalmudaliar24"
                 target="_blank"

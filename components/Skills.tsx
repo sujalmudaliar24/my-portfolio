@@ -53,11 +53,15 @@ export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} id="skills" className="py-24 md:py-32" style={{ background: "var(--color-cream)" }}>
-        <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
-        <div className="text-center mb-16">
+    <section ref={sectionRef} id="skills" className="py-28 md:py-36" style={{ background: "var(--color-cream)" }}>
+      <div
+        className="w-full max-w-[1600px] mx-auto"
+        style={{ padding: "0 clamp(2.5rem, 6vw, 9rem)" }}
+      >
+        <div className="text-center text-stack" style={{ marginBottom: "4rem", padding: "0 0.5rem" }}>
 
-          <span className="section-label">Expertise</span>
+
+          <span className="section-label mb-3 block">Expertise</span>
           <h2
             className="text-3xl md:text-4xl font-bold mt-2"
             style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
@@ -65,7 +69,7 @@ export default function Skills() {
             Skills & Technologies
           </h2>
           <p
-            className="mt-4 max-w-lg mx-auto text-base text-slate-600"
+            className="mt-5 mb-2 max-w-lg mx-auto text-base text-slate-600 px-4"
           >
             From mobile-first development with React Native and full-stack engineering to cybersecurity assessments and network monitoring.
           </p>
@@ -148,7 +152,7 @@ export default function Skills() {
           </div>
         </div>
         {/* GitHub contributions */}
-        <div className="mt-8">
+        <div style={{ marginTop: "5rem", padding: "0 0.5rem" }}>
           <GithubCalendar username="sujalmudaliar24" />
         </div>
       </div>

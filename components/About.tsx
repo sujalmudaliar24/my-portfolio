@@ -42,23 +42,27 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-24 md:py-32"
+      className="py-28 md:py-36"
       style={{ background: "var(--color-cream)" }}
     >
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 items-start">
+      <div
+        className="w-full max-w-[1600px] mx-auto"
+        style={{ padding: "0 clamp(2.5rem, 6vw, 9rem)" }}
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 lg:gap-28 items-start">
+
           {/* Left — Text */}
           <div className="lg:col-span-2">
-            <span className="section-label about-reveal">About Me</span>
+            <span className="section-label about-reveal mb-4 block">About Me</span>
             <h2
-              className="about-reveal text-3xl md:text-4xl font-bold mb-8 leading-snug"
+              className="about-reveal text-3xl md:text-4xl font-bold mb-8 mt-2 leading-snug"
               style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
             >
               Mobile developer by craft,
               <br />
               <span className="text-[var(--color-slate)]">security-minded by nature.</span>
             </h2>
-            <div className="space-y-5">
+            <div className="space-y-6 mt-2">
               <p
                 className="about-reveal text-base leading-relaxed"
                 style={{ color: "var(--color-slate)" }}
@@ -95,9 +99,9 @@ export default function About() {
 
           {/* Right — Experience / Education / Certifications */}
           <div className="lg:pt-12 lg:col-span-1">
-            <span className="section-label about-reveal">Experience</span>
+            <span className="section-label about-reveal mb-4 block">Experience</span>
 
-            <div className="right-sections mt-6 grid gap-6">
+            <div className="right-sections mt-4 grid gap-6">
               <div
                 className="section-card about-reveal"
                 style={{ background: "var(--color-cream)", borderColor: "var(--color-border)" }}
@@ -119,7 +123,7 @@ export default function About() {
                   </span>
                 </div>
 
-                <ul className="space-y-2 text-sm leading-relaxed" style={{ color: "var(--color-slate)" }}>
+                <ul className="space-y-3 text-sm leading-relaxed mt-2" style={{ color: "var(--color-slate)" }}>
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-navy)] shrink-0" />
                     Developed and enhanced production-level React Native applications with hands-on experience in UI development and backend integration
@@ -156,13 +160,13 @@ export default function About() {
                     CGPA 7.5
                   </span>
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--color-slate)" }}>
+                <p className="text-sm leading-relaxed mt-1" style={{ color: "var(--color-slate)" }}>
                   Studied core computer science fundamentals, web technologies, and software engineering principles. Built a strong foundation in programming and system design.
                 </p>
               </div>
 
               <div className="section-card" style={{ background: "var(--color-warm)", borderColor: "var(--color-border)" }}>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--color-navy)" }}>
+                <h3 className="text-lg font-semibold mb-4" style={{ color: "var(--color-navy)" }}>
 
                   Certifications
                 </h3>

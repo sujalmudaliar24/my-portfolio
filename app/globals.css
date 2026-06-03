@@ -19,30 +19,33 @@ html.dark {
 }
 
 
+
 /* ───── Base ───── */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 
-/* Scale base font-size responsively so text and tailwind rem-based sizes grow on wide screens */
-html {
-  font-size: clamp(16px, 0.9vw + 14px, 18px);
-}
+  /* Scale base font-size responsively so text and tailwind rem-based sizes grow on wide screens */
+  html {
+    font-size: clamp(16px, 0.9vw + 14px, 18px);
+  }
 
-body {
-  background-color: var(--color-cream);
-  color: var(--color-navy);
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-navy);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
 }
 
 
@@ -483,6 +486,25 @@ body {
   transform: translateY(-1px);
 }
 
+/* ───── Spacing helpers (global) ───── */
+/* Used to counteract the global * { margin: 0; padding: 0; } reset */
+.component-pad {
+  padding-left: max(1rem, 2vw);
+  padding-right: max(1rem, 2vw);
+}
+
+/* Consistent vertical rhythm for text blocks */
+.text-stack > * + * {
+  margin-top: 0.75rem;
+}
+
+/* Keep section content from touching edges */
+.section-inner {
+  width: 100%;
+  padding-left: max(1rem, 2vw);
+  padding-right: max(1rem, 2vw);
+}
+
 /* ───── Section Heading ───── */
 .section-label {
   display: inline-block;
@@ -494,6 +516,7 @@ body {
   color: var(--color-slate);
   margin-bottom: 1rem;
 }
+
 
 /* ───── Scrollbar ───── */
 ::-webkit-scrollbar {
@@ -531,7 +554,7 @@ body {
 }
 
 .section-card {
-  padding: 1.25rem;
+  padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid var(--color-border);
   background: var(--color-cream);
@@ -636,5 +659,50 @@ body {
 @media (min-width: 1536px) {
   .max-w-7xl {
     max-width: 1400px;
+  }
+}
+
+/* ───── GitHub Calendar Horizontal Scroll ───── */
+.github-calendar-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-slate-light) transparent;
+}
+
+.github-calendar-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.github-calendar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+.github-calendar-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-slate-light);
+  border-radius: 3px;
+}
+
+.github-calendar-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate);
+}
+
+/* ───── Section Content Spacing ───── */
+/* Adds breathing room inside each section wrapper to prevent text/elements
+   from touching the section edges on all screen sizes */
+.section-content {
+  padding: 0 clamp(1rem, 4vw, 3rem);
+}
+
+/* Give all headings within sections a bottom margin for visual separation */
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    margin-bottom: 2rem;
   }
 }

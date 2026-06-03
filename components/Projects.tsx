@@ -59,22 +59,26 @@ export default function Projects() {
 
 
   return (
-    <section id="projects" ref={sectionRef} className="py-24 md:py-32">
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24">
-        <div className="text-center mb-16 relative">
+    <section id="projects" ref={sectionRef} className="py-28 md:py-36">
+      <div
+        className="w-full max-w-[1600px] mx-auto"
+        style={{ padding: "0 clamp(2.5rem, 6vw, 9rem)" }}
+      >
+        <div className="text-center mb-16 relative text-stack px-2">
+
           <div className="projects-loader" aria-hidden="true">
             <div className="projects-loader-track" />
             <div className="projects-loader-spark" />
           </div>
 
-          <span className="section-label projects-reveal">Selected Work</span>
+          <span className="section-label projects-reveal mb-3 block">Selected Work</span>
           <h2
-            className="projects-reveal text-3xl md:text-4xl font-bold mt-2 text-navy"
+            className="projects-reveal text-3xl md:text-4xl font-bold mt-2 mb-4 text-navy"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Interactive Portfolio Journal
           </h2>
-          <p className="mt-4 text-base" style={{ color: "var(--color-slate)" }}>
+          <p className="mt-4 mb-2 text-base px-4" style={{ color: "var(--color-slate)" }}>
             Flip through the pages of this notebook to browse my mobile applications — from recipe recommendation engines to full e-commerce platforms.
           </p>
         </div>

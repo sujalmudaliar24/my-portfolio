@@ -114,18 +114,22 @@ export default function Hero() {
         />
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 py-32 md:py-40 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 xl:gap-24">
+      <div
+        className="w-full max-w-[1600px] mx-auto relative z-10"
+        style={{ padding: "clamp(8rem, 12vw, 11rem) clamp(2.5rem, 6vw, 9rem)" }}
+      >
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-20 xl:gap-28">
+
 
           {/* Left — Text Content */}
           <div className="flex-1 lg:pr-12">
             {/* Label */}
-            <div className="section-label mb-6">Sujal Mudaliar — Mumbai</div>
+            <div className="section-label mb-4 mt-2">Sujal Mudaliar — Mumbai</div>
 
             {/* Name */}
             <h1
               ref={nameRef}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight mb-6"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight mb-6 mt-2"
               style={{ fontFamily: "var(--font-heading)", color: "var(--color-navy)" }}
             >
               Sujal
@@ -136,7 +140,7 @@ export default function Hero() {
             {/* Role */}
             <p
               ref={roleRef}
-              className="text-lg md:text-xl font-medium mb-6 flex items-center flex-wrap gap-2"
+              className="text-lg md:text-xl font-medium mb-8 flex items-center flex-wrap gap-2"
               style={{ color: "var(--color-navy)" }}
             >
               React Native Developer
@@ -150,7 +154,7 @@ export default function Hero() {
             {/* Description */}
             <p
               ref={descRef}
-              className="text-base md:text-lg leading-relaxed mb-10"
+              className="text-base md:text-lg leading-relaxed mb-10 pr-2"
               style={{ color: "var(--color-slate)" }}
             >
               Building cross-platform mobile applications with React Native and
@@ -160,7 +164,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div ref={ctaRef} className="flex flex-wrap gap-4">
+            <div ref={ctaRef} className="flex flex-wrap gap-4 mt-2">
               <button
                 onClick={() => scrollTo("#projects")}
                 className="btn-primary"

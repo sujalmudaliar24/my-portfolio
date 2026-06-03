@@ -27,15 +27,46 @@ export default function GithubCalendar({ username = "sujalmudaliar24" }: { usern
 
   return (
     <div
-      className="github-calendar-wrapper mt-6 flex justify-center"
+      className="github-calendar-wrapper mt-8 w-full flex flex-col items-center"
       aria-label="GitHub contributions calendar"
     >
-      <div
-        className="rounded-lg border border-slate-200 p-4"
-        style={{ backgroundColor: "#000", color: "#D7E3FF"  }}
+      {/* Title */}
+      <h3
+        className="text-lg font-semibold mb-4"
+        style={{ color: "var(--color-navy)" }}
       >
-        <GitHubCalendar username={user} />
+        GitHub Contributions
+      </h3>
+
+      <div
+        className="w-full rounded-xl border p-1"
+        style={{
+          borderColor: "var(--color-border)",
+          backgroundColor: "#000",
+          color: "#D7E3FF",
+        }}
+      >
+        {/* Horizontal scroll container — uses custom scrollbar from globals.css */}
+        <div
+          className="github-calendar-scroll"
+          style={{
+            padding: "1.25rem 1rem",
+          }}
+        >
+          <div className="inline-block min-w-[760px]">
+            <GitHubCalendar username={user} />
+          </div>
+        </div>
       </div>
+
+      {/* Scroll hint for mobile */}
+      <p
+        className="mt-3 text-xs sm:hidden"
+        style={{ color: "var(--color-slate-light)" }}
+      >
+        ← Scroll horizontally to view →
+      </p>
     </div>
   );
 }
+

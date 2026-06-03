@@ -51,9 +51,9 @@ export default function Navbar() {
       ref={navRef}
       className="fixed top-4 left-0 right-0 z-50 transition-all duration-500"
     >
-      <div className="w-full px-4 sm:px-6 lg:px-10">
+      <div className="w-full" style={{ padding: "0 clamp(1.5rem, 4vw, 6rem)" }}>
         <div
-          className={`relative flex items-center h-16 px-6 rounded-full transition-all duration-500 ${
+          className={`relative flex items-center h-16 px-10 sm:px-12 rounded-full transition-all duration-500 ${
             scrolled
               ? "backdrop-blur-xl shadow-xl"
               : "backdrop-blur-md shadow-md"
@@ -124,6 +124,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden flex flex-col gap-1.5 p-2 z-10"
+            style={{ marginLeft: "auto" }}
             aria-label="Toggle menu"
           >
             <span
