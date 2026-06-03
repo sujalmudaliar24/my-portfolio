@@ -76,10 +76,10 @@ export default function Projects() {
             className="projects-reveal text-3xl md:text-4xl font-bold mt-2 mb-4 text-navy"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Interactive Portfolio Journal
+            Project Showcase
           </h2>
           <p className="mt-4 mb-2 text-base px-4" style={{ color: "var(--color-slate)" }}>
-            Flip through the pages of this notebook to browse my mobile applications — from recipe recommendation engines to full e-commerce platforms.
+            A curated collection of my mobile applications — from recipe recommendation engines to full e-commerce platforms.
           </p>
         </div>
 
