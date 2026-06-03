@@ -164,10 +164,11 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div ref={ctaRef} className="flex flex-wrap gap-4 mt-2">
+            <div ref={ctaRef} className="flex flex-wrap gap-4 mt-2 ">
               <button
                 onClick={() => scrollTo("#projects")}
-                className="btn-primary"
+                className="btn-secondary"
+                 style={{ color: "#000", backgroundColor: "#fff" }}
               >
                 View Projects
                 <svg
@@ -187,6 +188,7 @@ export default function Hero() {
               <button
                 onClick={() => scrollTo("#contact")}
                 className="btn-secondary"
+                style={{ color: "#000", backgroundColor: "#fff" }}
               >
                 Contact Me
               </button>

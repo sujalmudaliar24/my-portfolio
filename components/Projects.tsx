@@ -71,16 +71,22 @@ export default function Projects() {
             <div className="projects-loader-spark" />
           </div>
 
-          <span className="section-label projects-reveal mb-3 block">Selected Work</span>
+          <span className="section-label projects-reveal mb-3 block"> Portfolio Journal</span>
           <h2
             className="projects-reveal text-3xl md:text-4xl font-bold mt-2 mb-4 text-navy"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Project Showcase
+             Portfolio Journal
           </h2>
           <p className="mt-4 mb-2 text-base px-4" style={{ color: "var(--color-slate)" }}>
-            A curated collection of my mobile applications — from recipe recommendation engines to full e-commerce platforms.
+           A curated collection of my mobile applications — from recipe recommendation engines to full e-commerce platforms.
           </p>
+
+          <p className="mt-4 text-base px-4" style={{ color: "var(--color-slate)" }}>
+            If you’d like to collaborate, I can connect with you to build thoughtful, performance-driven applications that others can actually use.
+          </p>
+
+
         </div>
 
         {/* Projects Deck (pinned scroll animation) */}

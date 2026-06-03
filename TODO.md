@@ -1,7 +1,3 @@
-# TODO
-
-- [ ] Add global spacing helper classes in `app/globals.css` (component padding + text stack spacing)
-- [ ] Update `components/GithubCalendar.tsx` to make the GitHub contributions calendar horizontally scrollable
-- [ ] Apply spacing helpers to: `Hero`, `About`, `Projects`, `Skills`, `Contact`, `Footer`
-- [ ] Run Next build/dev to verify responsiveness and scroll behavior
-
+- [x] Change project pinned-scroll layout to keep description beside the phone on md+ (fixed alignment, no index-based swapping)
+- [ ] Verify layout in browser for all projects (Cookify, DripHouse, Calmi) at mobile + md+ breakpoints
+- [ ] (Optional) Run lint/build to ensure no TypeScript/JSX issues
