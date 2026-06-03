@@ -671,6 +671,14 @@ html.dark {
   scrollbar-color: var(--color-slate-light) transparent;
 }
 
+/* Tighten the calendar width to its real rendered SVG (reduces extra empty width). */
+.github-calendar-crop {
+  overflow: hidden;
+  width: fit-content;
+  max-width: 100%;
+}
+
+
 .github-calendar-scroll::-webkit-scrollbar {
   height: 6px;
 }

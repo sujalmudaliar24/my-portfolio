@@ -69,16 +69,15 @@ export default function ProjectsPinnedScroll() {
                */}
               <div
                 className={
-                  "grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-10 " +
+                  "grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-10 text-center " +
                   "md:[&_.projects-phone]:col-start-1 md:[&_.projects-info]:col-start-2" // fixed: phone left, description right (beside on md+)
                 }
               >
                 {/* Phone + mock device */}
-                <div className="projects-phone">
-
+                <div className="projects-phone flex justify-center">
                   <div className="relative w-[280px] h-[520px] sm:h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-navy/20">
                     {/* Phone Screen */}
-                    <div className="absolute inset-0">
+                    <div className="absolute inset-0 flex items-center justify-center">
                       <img
                         src={imageUrl}
                         alt={`${project.title} screenshot`}

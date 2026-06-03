@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // react-github-calendar is a client-side only component; import dynamically
 // ensure we return the module's default export (the React component)
@@ -19,11 +19,23 @@ const GitHubCalendar = dynamic<{ username?: string }>(() =>
   }),
 { ssr: false });
 
-
-
-
-export default function GithubCalendar({ username = "sujalmudaliar24" }: { username?: string }) {
+export default function GithubCalendar({
+  username = "sujalmudaliar24",
+}: {
+  username?: string;
+}) {
   const [user] = useState(username);
+
+  useEffect(() => {
+    // Some browsers briefly render the calendar cells with incorrect sizing/colors on first paint.
+    // Force a reflow after mount so the grid shows up properly when it scrolls into view.
+    const id = window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        // no-op: nested raf ensures layout + paint.
+      });
+    });
+    return () => window.cancelAnimationFrame(id);
+  }, []);
 
   return (
     <div
@@ -47,13 +59,9 @@ export default function GithubCalendar({ username = "sujalmudaliar24" }: { usern
         }}
       >
         {/* Horizontal scroll container — uses custom scrollbar from globals.css */}
-        <div
-          className="github-calendar-scroll"
-          style={{
-            padding: "1.25rem 1rem",
-          }}
-        >
-          <div className="inline-block min-w-[760px]">
+        <div className="github-calendar-scroll" style={{ padding: "1.25rem 0" }}>
+          {/* Crop horizontal extra width by removing the fixed min-width and letting the calendar define its own width. */}
+          <div className="inline-block align-top github-calendar-crop">
             <GitHubCalendar username={user} />
           </div>
         </div>
@@ -69,4 +77,5 @@ export default function GithubCalendar({ username = "sujalmudaliar24" }: { usern
     </div>
   );
 }
+
 
