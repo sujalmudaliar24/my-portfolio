@@ -76,13 +76,13 @@ export default function ProjectsPinnedScroll() {
                 {/* Phone + mock device */}
                 <div className="projects-phone">
 
-                  <div className="relative w-[280px] h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-navy/20">
+                  <div className="relative w-[280px] h-[520px] sm:h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-navy/20">
                     {/* Phone Screen */}
                     <div className="absolute inset-0">
                       <img
                         src={imageUrl}
                         alt={`${project.title} screenshot`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain bg-white"
                       />
                     </div>
                     {/* Phone Details (optional: notch, chin, etc.) */}
@@ -111,7 +111,7 @@ export default function ProjectsPinnedScroll() {
                     {project.title}
                   </h3>
                   <p
-                    className={`text-slate-600 max-w-xl ${isBeyondThird ? 'text-red-400' : 'text-slate-500'} leading-relaxed`}
+                    className={`text-slate-600 max-w-xl ${isBeyondThird ? 'text-red-400' : 'text-slate-500'} leading-relaxed text-sm sm:text-base`} 
                     style={{ marginBottom: "1rem" }}
                   >
                     {project.description}

@@ -1,3 +1,7 @@
-- [x] Change project pinned-scroll layout to keep description beside the phone on md+ (fixed alignment, no index-based swapping)
-- [ ] Verify layout in browser for all projects (Cookify, DripHouse, Calmi) at mobile + md+ breakpoints
-- [ ] (Optional) Run lint/build to ensure no TypeScript/JSX issues
+# TODO
+
+## Projects section responsiveness
+- [x] Reduce mock phone height on mobile and prevent screenshot cropping by switching `object-cover` -> `object-contain`.
+- [x] Improve description readability on mobile by reducing text size (`text-sm sm:text-base`).
+- [ ] Manually verify on mobile viewport (e.g., 375px width) that text is readable and image fits without feeling cut off.
+
